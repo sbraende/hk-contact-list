@@ -1,0 +1,89 @@
+/* IMPORTING FONTS */
+@font-face {
+  font-family: Lato-Regular;
+  src: url("../assets/fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: Lato-Bold;
+  src: url("../assets/fonts/Lato/Lato-Bold.ttf");
+}
+
+/* MAIN LAYOUT STYLES */
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.contact-app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  font-family: Lato-Regular;
+  background-color: salmon;
+}
+
+.contact-app__display-contacts {
+  flex-basis: 75%;
+}
+
+/* STYLES FOR FORM */
+
+.contact-app__form-container {
+  flex-basis: 25%;
+  height: 100vh;
+  background-color: green;
+}
+
+.contact-app__form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-form);
+}
+
+.form__logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 10%;
+}
+
+.form__logo-container img {
+  width: 40px;
+}
+
+.form__input-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  padding: var(--spacing-medium);
+  flex-grow: 1;
+}
+
+.form__input {
+  width: 100%;
+  height: 32px;
+  padding: 0 var(--spacing-small);
+  font-family: inherit;
+}
+
+.form__address-input {
+  resize: none;
+  padding: var(--spacing-small);
+  font-family: inherit;
+}
+
+.form__submit-button {
+  height: 32px;
+  cursor: pointer;
+  font-family: inherit;
+  background-color: var(--color-add-button);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--boarder-radius-small);
+}
+
+.form__submit-button:hover {
+  opacity: 0.9;
+}
