@@ -120,7 +120,7 @@ body {
 }
 
 .contacts__header,
-.contacts_item {
+.contacts-item {
   display: flex;
   width: 100%;
   padding: var(--spacing-small) 0;
