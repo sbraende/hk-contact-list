@@ -28,9 +28,17 @@ const addContacts = (e) => {
   renderContacts(contacts);
 };
 
-// FUNCTION FOR STORING CONTACTS IN LCOAL STORAGE
+// FUNCTION FOR STORING CONTACTS IN LOCAL STORAGE
 const storeContacts = (contactsArray) => {
   localStorage.setItem("contacts", JSON.stringify(contactsArray));
+};
+
+// FUNCTION FOR DELETING CONTACTS FROM THE LIST
+const deleteContacts = (id) => {
+  const contacts = JSON.parse(localStorage.getItem("contacts"));
+  const remainingContacts = contacts.filter((contact) => contact.id !== id);
+  storeContacts(remainingContacts);
+  renderContacts(remainingContacts);
 };
 
 // FUNCTION FOR RENDERING THE CONTACTS ON THE DOM
@@ -73,6 +81,9 @@ const renderContacts = (contactsArray) => {
     contactPhone.classList.add("contacts-item__phone");
     contactAddress.classList.add("contacts-item__address");
     contactTools.classList.add("contacts-item__controls");
+
+    // ADD EVENT LISTENERES TO DELETE AND EDIT BUTTON
+    deleteButton.addEventListener("click", () => deleteContacts(contact.id));
   });
 };
 
